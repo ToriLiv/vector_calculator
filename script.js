@@ -47,12 +47,12 @@ submitBtn.addEventListener('click', (e) => {
 
 
     //--------------------validaciones----------------
-    if (ax === "" || ay === "" || bx === "" || by === "") {
+    if (isNaN(ax) || isNaN(ay) || isNaN(bx) || isNaN(by)) {
         Swal.fire({ title: "Campo vacio", text: "Ingrese un valor, por favor.", icon: "warning", position: "top", });
         return;
     }
 
-    if (ax === -0 || ay === -0 || bx === -0 || by === -0) {
+    if (Object.is(ax, -0) || Object.is(ay, -0) || Object.is(bx, -0) || Object.is(by, -0)) {
         Swal.fire({ title: "Numero invalido", text: `El numero -0 no es reconocible intente con 0.`, icon: "warning", position: "top", });
         return;
     }
