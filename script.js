@@ -53,7 +53,7 @@ submitBtn.addEventListener('click', (e) => {
     }
 
     if (Object.is(ax, -0) || Object.is(ay, -0) || Object.is(bx, -0) || Object.is(by, -0)) {
-        Swal.fire({ title: "Numero invalido", text: `El numero -0 no es reconocible intente con 0.`, icon: "warning", position: "top", });
+        Swal.fire({ title: "Numero inválido", text: `El número -0 no es reconocible, intente con 0.`, icon: "warning", position: "top", });
         return;
     }
 
@@ -77,7 +77,7 @@ submitBtn.addEventListener('click', (e) => {
             break;
         default:
             Swal.fire({
-                title: '❌ Error', text: 'Intentelo de nuevo, por favor.', position: 'top',
+                title: '❌ Error', text: 'Seleccione una opción, por favor.', position: 'top',
             });
     }
 });
