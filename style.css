@@ -198,12 +198,12 @@ input[type=number]::-webkit-inner-spin-button {
 /*-------------responsive design-----------------*/
 @media (max-width: 900px) {
   section span {
-     width: calc(10vw - 2px);
-     height: calc(10vw - 2px);
+    width: calc(10vw - 2px);
+    height: calc(10vw - 2px);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   section span {
     display: none !important;
   }
@@ -220,6 +220,10 @@ input[type=number]::-webkit-inner-spin-button {
 
   .form {
     width: 100%;
+  }
+
+  .signin .content h2 {
+    font-size: 1.7em;
   }
 }
 
