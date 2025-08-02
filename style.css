@@ -205,7 +205,8 @@ input[type=number]::-webkit-inner-spin-button {
 
 @media (max-width: 600px) {
   section span {
-    display: none !important;
+    width: calc(20vw - 2px);
+    height: calc(20vw - 2px);
   }
 
   .signin {
@@ -223,7 +224,11 @@ input[type=number]::-webkit-inner-spin-button {
   }
 
   .signin .content h2 {
-    font-size: 1.7em;
+    font-size: 1.6em;
+  }
+
+  .signin .content .form .inputBox input[type="submit"] {
+  color: #000;
   }
 }
 
