@@ -230,6 +230,10 @@ input[type=number]::-webkit-inner-spin-button {
   .signin .content .form .inputBox input[type="submit"] {
   color: #000 !important;
   }
+
+  .swal2-popup{
+    font-size: 1em;
+  }
 }
 
 .swal2-confirm {
