@@ -31,25 +31,35 @@ function restarVectores(ax, ay, bx, by, order) {
 function productoEscalar(ax, ay, bx, by) {
     return (ax * bx) + (ay * by);
 }
-
 //-------------------------------------------------------------
 
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
 
-    //variables
-    const ax = parseFloat(document.getElementById('ax').value);
-    const ay = parseFloat(document.getElementById('ay').value);
-    const bx = parseFloat(document.getElementById('bx').value);
-    const by = parseFloat(document.getElementById('by').value);
+    //*********************variables***********************
+    const ax = parseFloat(document.getElementById('ax').value.trim());
+    const ay = parseFloat(document.getElementById('ay').value.trim());
+    const bx = parseFloat(document.getElementById('bx').value.trim());
+    const by = parseFloat(document.getElementById('by').value.trim());
     const operations = operationSelect.value;
     const order = orderSelect.value;
 
 
-    //result
+    //--------------------validaciones----------------
+    if (ax === "" || ay === "" || bx === "" || by === "") {
+        Swal.fire({ title: "Campo vacio", text: "Ingrese un valor, por favor.", icon: "warning", position: "top", });
+        return;
+    }
+
+    if (ax === -0 || ay === -0 || bx === -0 || by === -0) {
+        Swal.fire({ title: "Numero invalido", text: `El numero -0 no es reconocible intente con 0.`, icon: "warning", position: "top", });
+        return;
+    }
+
+    //result------------------------>
     let result;
-    
+
     switch (operations) {
         case "suma":
             result = sumarVectores(ax, ay, bx, by);
@@ -57,17 +67,18 @@ submitBtn.addEventListener('click', (e) => {
             break;
 
         case "resta":
-            result = restarVectores(ax, ay, bx, by,order);
+            result = restarVectores(ax, ay, bx, by, order);
             Swal.fire(`Resultado de ${order.toUpperCase()} = (${result.x}, ${result.y})`);
             break;
 
         case "producto":
             result = productoEscalar(ax, ay, bx, by);
-              Swal.fire(`Resultado de A . B = ${result}`);
-                break;
-            default: 
-            Swal.fire({title: '❌ Error',text: 'Intentelo de nuevo, por favor.',position: 'top',
-      });
+            Swal.fire(`Resultado de A . B = ${result}`);
+            break;
+        default:
+            Swal.fire({
+                title: '❌ Error', text: 'Intentelo de nuevo, por favor.', position: 'top',
+            });
     }
 });
 
