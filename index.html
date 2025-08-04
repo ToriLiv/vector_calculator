@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--responsive-->
   <title>Vector Calculator</title>
   <!--styles css-->
   <link rel="stylesheet" href="./style.css">
@@ -15,20 +15,20 @@
       <div class="content">
         <h2>Calculadora de Vectores</h2>
         <div class="form">
-          <select id="operation">
+          <select id="operation"> <!--operaciones a seleccionar-->
             <option value="">Seleccione una operación</option>
             <option value="suma">Suma de vectores</option>
             <option value="resta">Resta de vectores</option>
             <option value="producto">Producto escalar</option>
           </select>
-
+          <!--select en el caso que se seleccione resta como operacion-->
           <div id="order-container" style="display: none;">
             <label for="order" style="color: #aaa; padding-bottom: 2px;">Orden:</label>
             <select id="order">
               <option value="a-b">A - B</option>
               <option value="b-a">B - A</option>
             </select>
-          </div>
+          </div><!--entradas-->
           <h3>Vector A</h3>
           <div class="inputBox">
             <input type="number" inputmode="numeric"  id="ax" required>

@@ -1,10 +1,11 @@
+//variables globales
 const operationSelect = document.getElementById('operation');
 const orderContainer = document.getElementById('order-container');
 const orderSelect = document.getElementById('order');
 const submitBtn = document.querySelector('input[type="submit"]');
 
 
-//select order operation resta
+//orden de la operacion resta de vectores
 operationSelect.addEventListener('change', () => {
     const operation = operationSelect.value;
     if (operation == "resta") {
@@ -14,7 +15,7 @@ operationSelect.addEventListener('change', () => {
     }
 });
 
-//=====================functions============================
+//=====================funciones============================
 function sumarVectores(ax, ay, bx, by) {
     return { x: ax + bx, y: ay + by };
 }
@@ -31,13 +32,13 @@ function restarVectores(ax, ay, bx, by, order) {
 function productoEscalar(ax, ay, bx, by) {
     return (ax * bx) + (ay * by);
 }
-//-------------------------------------------------------------
+//-------------------------------------------------------------evento click
 
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
 
-    //*********************variables***********************
+    //*********************variables para las operaciones***********************
     const ax = parseFloat(document.getElementById('ax').value.trim());
     const ay = parseFloat(document.getElementById('ay').value.trim());
     const bx = parseFloat(document.getElementById('bx').value.trim());
@@ -46,7 +47,7 @@ submitBtn.addEventListener('click', (e) => {
     const order = orderSelect.value;
 
 
-    //--------------------validaciones----------------
+    //--------------------validaciones campos vacios----------------
     if (isNaN(ax) || isNaN(ay) || isNaN(bx) || isNaN(by)) {
         Swal.fire({ title: "Campo vacio", text: "Ingrese un valor, por favor.", icon: "warning", position: "top", });
         return;
