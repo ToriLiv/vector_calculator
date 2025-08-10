@@ -1,72 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--responsive-->
+    <title>Vector Calculator</title>
+    <!--styles css-->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--responsive-->
-  <title>Vector Calculator</title>
-  <!--styles css-->
-  <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
-  <section id="grid">
-    <div class="signin">
-      <div class="content">
-        <h2>Calculadora de Vectores</h2>
-        <div class="form">
-          <select id="operation"> <!--operaciones a seleccionar-->
-            <option value="">Seleccione una operación</option>
-            <option value="suma">Suma de vectores</option>
-            <option value="resta">Resta de vectores</option>
-            <option value="producto">Producto escalar</option>
-          </select>
-          <!--select en el caso que se seleccione resta como operacion-->
-          <div id="order-container" style="display: none;">
-            <label for="order" style="color: #aaa; padding-bottom: 2px;">Orden:</label>
-            <select id="order">
-              <option value="a-b">A - B</option>
-              <option value="b-a">B - A</option>
+  <body>
+    <section id="grid">
+      <div class="signin">
+        <div class="content">
+          <h2>Calculadora de Vectores</h2>
+          <div class="form">
+            <select id="operation">
+              <!--operaciones a seleccionar-->
+              <option value="">Seleccione una operación</option>
+              <option value="suma">Suma de vectores</option>
+              <option value="resta">Resta de vectores</option>
+              <option value="producto">Producto escalar</option>
             </select>
-          </div><!--entradas-->
-          <h3>Vector A</h3>
-          <div class="inputBox">
-            <input type="number" inputmode="numeric"  id="ax" required>
-            <i>x</i>
-          </div>
-          <div class="inputBox">
-            <input type="number" inputmode="numeric"  id="ay" required>
-            <i>y</i>
-          </div>
-          <h3>Vector B</h3>
-          <div class="inputBox">
-            <input type="number" inputmode="numeric"  id="bx" required>
-            <i>x</i>
-          </div>
-          <div class="inputBox">
-            <input type="number" inputmode="numeric"  id="by" required>
-            <i>y</i>
-          </div>
-          <div class="inputBox">
-            <input type="submit" value="CALCULAR">
+            <!--select en el caso que se seleccione resta como operacion-->
+            <div id="order-container" style="display: none">
+              <label for="order" style="color: #aaa; padding-bottom: 2px"
+                >Orden:</label
+              >
+              <select id="order">
+                <option value="a-b">A - B</option>
+                <option value="b-a">B - A</option>
+              </select>
+            </div>
+            <!--entradas-->
+            <h3>Vector A</h3>
+            <div class="inputBox">
+              <input type="number" inputmode="numeric" id="ax" required />
+              <i>x</i>
+            </div>
+            <div class="inputBox">
+              <input type="number" inputmode="numeric" id="ay" required />
+              <i>y</i>
+            </div>
+            <h3>Vector B</h3>
+            <div class="inputBox">
+              <input type="number" inputmode="numeric" id="bx" required />
+              <i>x</i>
+            </div>
+            <div class="inputBox">
+              <input type="number" inputmode="numeric" id="by" required />
+              <i>y</i>
+            </div>
+            <div class="inputBox">
+              <input type="submit" value="CALCULAR" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!------------------------generate background squares :)--------------------------------------------->
-  <script>
-    const section = document.getElementById('grid');
-    const total = 400;
-    for (let i = 0; i < total; i++) {
-      const span = document.createElement('span');
-      section.appendChild(span); 
-    }
-  </script>
+    </section>
+    <!------------------------generate background squares :)--------------------------------------------->
+    <script>
+      const section = document.getElementById("grid");
+      const total = 400;
+      for (let i = 0; i < total; i++) {
+        const span = document.createElement("span");
+        section.appendChild(span);
+      }
+    </script>
 
-  <!------scripts js------>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="script.js"></script>
-
-</body>
+    <!------scripts js------>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
