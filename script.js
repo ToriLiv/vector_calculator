@@ -5,7 +5,7 @@ const orderSelect = document.getElementById('order');
 const submitBtn = document.querySelector('input[type="submit"]');
 
 
-//----------orden de la operacion resta de vectores----------
+//--------orden de la operacion resta de vectores (A-B) o (B-A)------
 operationSelect.addEventListener('change', () => {
     const operation = operationSelect.value;
     if (operation == "resta") {
